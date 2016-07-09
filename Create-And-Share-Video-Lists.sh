@@ -17,14 +17,14 @@ checkDep(){
 command -v $1 >/dev/null 2>&1 || { echo -e >&2 "***I require $1 but it's not installed. Aborting."; exit 1; }
 }
 
-#checkDep avconv
+checkDep avconv
 checkDep rsync
 
 ############# MAIN VARIABLES #############
 MainFolder="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 VideoFolder=`cat $MainFolder/VideoFolder`
 RemoteServer=`cat $MainFolder/http_prelink`
-LogFolder=/var/log/automat/Create-And-Share-Video-Lists/
+LogFolder=/var/log/Create-And-Share-Video-Lists/
 LogFilePath=$LogFolder"/log"
 
 #Checking all necessary configs
